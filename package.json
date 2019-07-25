@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "scripts": {
+    "server": "yarn workspace @rezervo/server start",
+    "web": "yarn workspace @rezervo/web start",
+    "app": "yarn workspace @rezervo/app start",
+    "dev": "concurrently -n web,server --kill-others \"yarn web\" \"yarn server\""
+  },
+  "dependencies": {}
+}
